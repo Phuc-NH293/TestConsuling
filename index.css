@@ -356,10 +356,18 @@
 }
 
 @media (min-width:320px) and (max-width: 480px) {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   body {
     width: 100%;
     max-width: 380px;
     overflow-x: hidden;
+    margin: 0;
 
   }
 
@@ -442,6 +450,7 @@
     border: none;
     background-color: #ffffff;
     height: auto;
+    width: 360px;
   }
 
   .furniture__content {
