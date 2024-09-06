@@ -631,6 +631,7 @@
 
   .furniture__content {
     margin: 0;
+    text-align: center;
   }
 
   .furniture__content p {
@@ -687,4 +688,10 @@
   .popular-posts__item {
     margin-top: 20px;
   }
+
+  .member__data {
+
+    margin-left: 20px;
+  }
+
 }
