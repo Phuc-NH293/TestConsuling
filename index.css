@@ -35,6 +35,8 @@
 
 .nav__item {
   margin-right: 40px;
+  align-items: center;
+  display: flex;
 }
 
 .nav__link {
@@ -59,6 +61,8 @@
 
 .button--secondary {
   background-color: rgba(34, 228, 167, 1);
+  padding: 12px 30px;
+  margin-left: 0;
 }
 
 .info {
@@ -81,8 +85,7 @@
   background-color: #FBE9E9;
   border-radius: 50%;
   z-index: -4;
-  top: -22px;
-  left: -30px;
+  transform: translate(-50%, -30%);
 }
 
 .info__shape--alt1 {
@@ -203,14 +206,15 @@
 
 
 .features__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   width: 80%;
   justify-content: space-between;
 }
 
 .features__item {
-  width: calc(80%/3);
+
   flex: 1;
   padding: 20px;
   border-radius: 15px;
@@ -249,8 +253,29 @@
   height: 230px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  transition: box-shadow 0.3s ease;
 
+
+}
+
+.popular-posts__tag {
+  position: relative;
+  display: inline-block;
+  /* So the width of the tag fits the text */
+  background-color: #f0f0f0;
+  /* Just an example background */
+
+}
+
+.popular-posts__tag::before {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid #3E46A4;
 }
 
 .popular-posts__list {
@@ -272,20 +297,27 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 0 1 calc(33.33% - 20px);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-.popular-posts__item:hover {
+.popular-posts__item:hover img {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
 }
 
 .popular-posts__img {
+
   position: relative;
+  overflow: hidden;
 }
 
 .popular-posts__img img {
+  display: block;
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease-in-out;
+
 }
 
 .popular-posts__tag {
@@ -300,7 +332,7 @@
 }
 
 .popular-posts__content {
-  padding: 10px;
+  padding: 20px;
 }
 
 .popular-posts__title {
@@ -311,15 +343,6 @@
 .popular-posts__description {
   font-size: 14px;
   color: #7E7FA0;
-}
-
-.popular-posts_eclipse {
-  width: 0;
-  height: 0;
-  border-right: 20px solid transparent;
-  border-bottom: 23px solid #3E46A4;
-  margin-left: 80px;
-  margin-top: -22px;
 }
 
 .header__nav {
@@ -352,7 +375,7 @@
 }
 
 .nav__item--cta {
-  margin-right: 40px;
+  margin-right: 10px;
 }
 
 @media (min-width:320px) and (max-width: 480px) {
@@ -444,17 +467,21 @@
   .furniture {
     display: block;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    text-align: center;
   }
 
   .furniture__placeholder {
-    border: none;
-    background-color: #ffffff;
+
     height: auto;
     width: 360px;
   }
 
   .furniture__content {
     margin: 0;
+    margin-top: 30px;
+
   }
 
   .furniture__content p {
@@ -466,9 +493,7 @@
     margin-left: 10px;
   }
 
-  .furniture__content img {
-    display: none;
-  }
+  .furniture__content img {}
 
   .furniture__image img {
     width: 380px;
@@ -489,6 +514,7 @@
   .features__item {
     width: 100%;
     margin-top: 10px;
+    margin-left: 0px;
   }
 
   .popular-posts__list {
@@ -560,6 +586,7 @@
 
   .nav__item {
     margin-bottom: 20px;
+    ;
   }
 
   .nav__link {
@@ -589,6 +616,8 @@
 
   .furniture {
     display: flex;
+    flex-wrap: wrap-reverse;
+
   }
 
   .member {
@@ -596,8 +625,7 @@
   }
 
   .furniture__placeholder {
-    border: none;
-    background-color: #ffffff;
+
     height: auto;
   }
 
@@ -606,7 +634,7 @@
   }
 
   .furniture__content p {
-    width: 370px;
+    width: 770px;
     padding: 10px;
   }
 
@@ -614,12 +642,10 @@
     margin-left: 10px;
   }
 
-  .furniture__content img {
-    display: none;
-  }
+  .furniture__content img {}
 
   .furniture__image img {
-    width: 380px;
+    width: 770px;
     margin: 0;
   }
 
@@ -635,12 +661,15 @@
 
   .features__list {
     width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .features__item {
     width: 100%;
     margin-top: 10px;
     height: 250px;
+    margin-left: 0px;
   }
 
   .popular-posts__list {
